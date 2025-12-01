@@ -1,0 +1,182 @@
+:root {
+  /* THEME: WARM & ORGANIC - Light Mode */
+  --background: hsl(40 33% 97%); /* Warm cream */
+  --foreground: hsl(25 25% 20%); /* Warm charcoal */
+  --card: hsl(40 40% 99%); /* Soft cream white */
+  --card-foreground: hsl(25 25% 20%);
+  --popover: hsl(40 40% 99%);
+  --popover-foreground: hsl(25 25% 20%);
+
+  /* Primary: Warm Forest Green (mossy, earthy) */
+  --primary: hsl(145 35% 38%);
+  --primary-foreground: hsl(40 33% 97%);
+
+  /* Secondary: Terracotta/Amber */
+  --secondary: hsl(25 65% 55%);
+  --secondary-foreground: hsl(40 33% 97%);
+
+  /* Muted: Warm sand */
+  --muted: hsl(35 30% 88%);
+  --muted-foreground: hsl(25 15% 45%);
+
+  /* Accent: Golden wheat */
+  --accent: hsl(45 75% 60%);
+  --accent-foreground: hsl(25 25% 20%);
+
+  --destructive: hsl(5 70% 55%);
+  --destructive-foreground: hsl(40 33% 97%);
+
+  --border: hsl(35 25% 85%);
+  --input: hsl(35 25% 85%);
+  --ring: hsl(145 35% 38%);
+
+  /* Charts with warm organic palette */
+  --chart-1: hsl(145 35% 38%); /* Forest green */
+  --chart-2: hsl(25 65% 55%); /* Terracotta */
+  --chart-3: hsl(45 75% 60%); /* Golden wheat */
+  --chart-4: hsl(160 25% 45%); /* Sage */
+  --chart-5: hsl(15 50% 45%); /* Burnt sienna */
+
+  /* Sidebar with warm organic theme */
+  --sidebar: hsl(40 33% 97%);
+  --sidebar-foreground: hsl(25 25% 20%);
+  --sidebar-primary: hsl(145 35% 38%);
+  --sidebar-primary-foreground: hsl(40 33% 97%);
+  --sidebar-accent: hsl(45 75% 60%);
+  --sidebar-accent-foreground: hsl(25 25% 20%);
+  --sidebar-border: hsl(35 25% 85%);
+  --sidebar-ring: hsl(145 35% 38%);
+
+  /* FONTS: Warm Organic Typography */
+  --font-sans: 'Nunito', system-ui, -apple-system, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 0.5rem;
+  
+  /* SHADOWS */
+  --shadow-x: 0;
+  --shadow-y: 1px;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.1;
+  --shadow-color: oklch(0 0 0);
+  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+
+  /* WARM & ORGANIC SHADOWS */
+  --shadow-warm: 0 4px 20px -4px hsl(25 30% 20% / 0.08);
+  --shadow-warm-lg: 0 8px 30px -6px hsl(25 30% 20% / 0.12);
+
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  /* THEME: WARM & ORGANIC - Dark Mode */
+  --background: hsl(25 20% 12%);
+  --foreground: hsl(40 30% 90%);
+  --card: hsl(25 18% 16%);
+  --card-foreground: hsl(40 30% 90%);
+  --popover: hsl(25 18% 16%);
+  --popover-foreground: hsl(40 30% 90%);
+
+  /* Primary: Brighter warm forest green for dark mode */
+  --primary: hsl(145 40% 45%);
+  --primary-foreground: hsl(40 33% 97%);
+
+  /* Secondary: Warm terracotta for dark mode */
+  --secondary: hsl(25 55% 60%);
+  --secondary-foreground: hsl(40 33% 97%);
+
+  /* Muted: Warm dark brown */
+  --muted: hsl(25 15% 25%);
+  --muted-foreground: hsl(35 20% 60%);
+
+  /* Accent: Golden wheat (slightly desaturated) */
+  --accent: hsl(45 65% 55%);
+  --accent-foreground: hsl(25 25% 20%);
+
+  --destructive: hsl(5 70% 55%);
+  --destructive-foreground: hsl(40 33% 97%);
+
+  --border: hsl(25 15% 25%);
+  --input: hsl(25 15% 25%);
+  --ring: hsl(145 40% 45%);
+
+  /* Charts with warm organic palette (dark mode) */
+  --chart-1: hsl(145 40% 45%);
+  --chart-2: hsl(25 55% 60%);
+  --chart-3: hsl(45 65% 55%);
+  --chart-4: hsl(160 30% 50%);
+  --chart-5: hsl(15 55% 50%);
+
+  /* Sidebar dark mode */
+  --sidebar: hsl(25 20% 12%);
+  --sidebar-foreground: hsl(40 30% 90%);
+  --sidebar-primary: hsl(145 40% 45%);
+  --sidebar-primary-foreground: hsl(40 33% 97%);
+  --sidebar-accent: hsl(45 65% 55%);
+  --sidebar-accent-foreground: hsl(25 25% 20%);
+  --sidebar-border: hsl(25 15% 25%);
+  --sidebar-ring: hsl(145 40% 45%);
+}
+
+/* Global resets */
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+}
+
+/* Utilities that might be missing from CDN if arbitrary values aren't picked up immediately */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* ORGANIC ANIMATIONS */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-grow {
+  animation: grow 0.5s ease-out forwards;
+}
+
+/* ORGANIC BACKGROUND TEXTURE */
+.organic-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-blend-mode: soft-light;
+  opacity: 0.03;
+}
