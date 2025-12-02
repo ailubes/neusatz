@@ -3,6 +3,7 @@ import { useParams, useNavigate, NavLink } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { getPostById, getPaginatedPosts, FacebookPost } from '../services/facebookPostsService';
 import { Calendar, ArrowLeft, Facebook, Link2, ChevronLeft, ChevronRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const DEFAULT_POST_IMAGE = '/images/posts/default-post.jpg';
 
@@ -141,6 +142,12 @@ const NewsPost: React.FC = () => {
     return imageUrl || DEFAULT_POST_IMAGE;
   };
 
+  // Helper to truncate description
+  const truncateDescription = (text: string, maxLength: number = 160) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + '...';
+  };
+
   // Loading state
   if (loading) {
     return (
@@ -181,8 +188,46 @@ const NewsPost: React.FC = () => {
     );
   }
 
+  // Create NewsArticle schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": post.text.substring(0, 110),
+    "description": truncateDescription(post.text, 160),
+    "image": getImageUrl(post.imageUrl),
+    "datePublished": new Date(post.timestamp * 1000).toISOString(),
+    "dateModified": new Date(post.timestamp * 1000).toISOString(),
+    "author": {
+      "@type": "Organization",
+      "@id": "https://neusatz.online/#organization",
+      "name": "Neusatz"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Neusatz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://neusatz.online/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://neusatz.online/${language}/news/${post.id}`
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-amber-50">
+      <SEO
+        title={truncateDescription(post.text, 60)}
+        description={truncateDescription(post.text, 160)}
+        path={`/news/${post.id}`}
+        lang={language}
+        image={getImageUrl(post.imageUrl)}
+        type="article"
+        publishedTime={new Date(post.timestamp * 1000).toISOString()}
+        schema={articleSchema}
+      />
       {/* Back button */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <button

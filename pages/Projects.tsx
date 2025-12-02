@@ -4,16 +4,39 @@ import { useLanguage } from '../context/LanguageContext';
 import { PROJECTS } from '../constants';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { Translation } from '../types';
+import SEO from '../components/SEO';
 
 const Projects: React.FC = () => {
   const { t, language } = useLanguage();
-  const [filter, setFilter] = useState<string>('All');
+  const [filter, setFilter] = useState<string>('all');
 
-  const categories = ['All', 'Infrastructure', 'Culture', 'Civic-Tech', 'Sports', 'Ecology'];
+  const categories = ['all', 'infrastructure', 'culture', 'civicTech', 'sports', 'ecology'] as const;
 
-  const filteredProjects = filter === 'All' 
-    ? PROJECTS 
-    : PROJECTS.filter(p => p.category === filter);
+  const filteredProjects = filter === 'all'
+    ? PROJECTS
+    : PROJECTS.filter(p => p.category.toLowerCase() === filter.toLowerCase() ||
+                           (filter === 'civicTech' && p.category === 'Civic-Tech'));
+
+  const projectsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": t.projects.title,
+    "description": t.projects.subtitle,
+    "numberOfItems": filteredProjects.length,
+    "itemListElement": filteredProjects.map((project, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Project",
+        "@id": `https://neusatz.online/${language}/projects#${project.id}`,
+        "name": project.title[language],
+        "description": project.description[language],
+        "image": project.image,
+        "category": project.category,
+        "status": project.status
+      }
+    }))
+  };
 
   const getStatusColor = (status: string) => {
     switch(status) {
@@ -32,13 +55,20 @@ const Projects: React.FC = () => {
 
   return (
     <div className="py-16 bg-gradient-to-b from-amber-50 to-stone-50 min-h-screen">
+      <SEO
+        title={t.seo.projects.title}
+        description={t.seo.projects.description}
+        path="/projects"
+        lang={language}
+        schema={projectsSchema}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="mb-16 text-center max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold text-stone-900 mb-4 tracking-tight">{t.projects.title}</h1>
           <p className="text-lg text-stone-600 leading-relaxed">
-            From rebuilding community centers to supporting veterans, our projects aim for long-term sustainable impact.
+            {t.projects.description}
           </p>
         </div>
 
@@ -54,7 +84,7 @@ const Projects: React.FC = () => {
                   : 'bg-white/90 text-stone-600 border border-amber-200 hover:bg-amber-50 hover:border-amber-300'
               }`}
             >
-              {cat === 'All' ? t.projects.filterAll : cat}
+              {t.projects.categories[cat as keyof typeof t.projects.categories]}
             </button>
           ))}
         </div>
@@ -86,7 +116,9 @@ const Projects: React.FC = () => {
               {/* Content Section */}
               <div className="p-7 flex-grow flex flex-col">
                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-bold text-primary-600 uppercase tracking-wider">{project.category}</span>
+                    <span className="text-xs font-bold text-primary-600 uppercase tracking-wider">
+                      {t.projects.categories[project.category.toLowerCase().replace('-', '') as keyof typeof t.projects.categories] || project.category}
+                    </span>
                  </div>
 
                  <h3 className="text-xl font-bold text-stone-900 mb-3 leading-snug group-hover:text-primary-700 transition-colors">

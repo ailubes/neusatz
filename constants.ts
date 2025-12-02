@@ -67,7 +67,18 @@ export const TRANSLATIONS: Record<Language, Translation> = {
     },
     projects: {
       title: "Our Projects",
+      subtitle: "Discover how we are transforming our community through tangible actions and sustainable development.",
+      viewAll: "View All Projects",
       filterAll: "All Projects",
+      description: "From rebuilding community centers to supporting veterans, our projects aim for long-term sustainable impact.",
+      categories: {
+        all: "All",
+        infrastructure: "Infrastructure",
+        culture: "Culture",
+        civicTech: "Civic-Tech",
+        sports: "Sports",
+        ecology: "Ecology"
+      },
       status: {
         ongoing: "Ongoing",
         completed: "Completed",
@@ -134,6 +145,32 @@ export const TRANSLATIONS: Record<Language, Translation> = {
         mission: "Mission",
         team: "Team",
         reports: "Reports"
+      }
+    },
+    seo: {
+      home: {
+        title: "Neusatz | Civic Development NGO",
+        description: "Neusatz empowers Berezanka community through innovation, education, economic development, and strong local networks. Join us in creating change."
+      },
+      projects: {
+        title: "Projects | Neusatz",
+        description: "Discover our community development projects: infrastructure, civic-tech, aquaculture, sports, and cultural heritage initiatives in Progresivka."
+      },
+      news: {
+        title: "News | Neusatz",
+        description: "Latest updates on Neusatz initiatives, community stories, and civic development news from Berezanka community."
+      },
+      about: {
+        title: "About Us | Neusatz",
+        description: "Learn about Neusatz NGO - our mission, team, and values. We work to create opportunities for the Berezanka rural community in Ukraine."
+      },
+      donate: {
+        title: "Get Involved | Neusatz",
+        description: "Support Neusatz NGO. Donate, volunteer, or partner with us to help develop the Berezanka community through sustainable projects."
+      },
+      community: {
+        title: "Community | Neusatz",
+        description: "Stay connected with Neusatz! Latest Facebook posts, community updates, and social engagement from Progresivka."
       }
     }
   },
@@ -203,7 +240,18 @@ export const TRANSLATIONS: Record<Language, Translation> = {
     },
     projects: {
       title: "Наші Проєкти",
+      subtitle: "Дізнайтеся, як ми змінюємо нашу громаду через конкретні дії та сталий розвиток.",
+      viewAll: "Переглянути всі проєкти",
       filterAll: "Всі Проєкти",
+      description: "Від відбудови громадських центрів до підтримки ветеранів — наші проєкти мають на меті довготривалий сталий вплив.",
+      categories: {
+        all: "Всі",
+        infrastructure: "Інфраструктура",
+        culture: "Культура",
+        civicTech: "Civic-Tech",
+        sports: "Спорт",
+        ecology: "Екологія"
+      },
       status: {
         ongoing: "В процесі",
         completed: "Завершено",
@@ -270,6 +318,32 @@ export const TRANSLATIONS: Record<Language, Translation> = {
         mission: "Місія",
         team: "Команда",
         reports: "Звіти"
+      }
+    },
+    seo: {
+      home: {
+        title: "ГО «Нейзац» | Розвиток громади",
+        description: "ГО «Нейзац» розвиває Березанську громаду через інновації, освіту, економічні проєкти та міцні локальні мережі. Долучайтеся до змін!"
+      },
+      projects: {
+        title: "Проєкти | ГО «Нейзац»",
+        description: "Проєкти розвитку громади: інфраструктура, civic-tech, аквакультура, спорт та культурна спадщина в Прогресівці та Березанці."
+      },
+      news: {
+        title: "Новини | ГО «Нейзац»",
+        description: "Останні новини ініціатив ГО «Нейзац», історії громади та події громадянського розвитку Березанської громади."
+      },
+      about: {
+        title: "Про нас | ГО «Нейзац»",
+        description: "Дізнайтеся про ГО «Нейзац» - нашу місію, команду та цінності. Ми створюємо можливості для Березанської сільської громади в Україні."
+      },
+      donate: {
+        title: "Долучитися | ГО «Нейзац»",
+        description: "Підтримайте ГО «Нейзац». Зробіть пожертву, станьте волонтером або партнером для розвитку Березанської громади через сталі проєкти."
+      },
+      community: {
+        title: "Громада | ГО «Нейзац»",
+        description: "Залишайтесь на зв'язку з ГО «Нейзац»! Останні публікації Facebook, новини громади та громадянська активність з Прогресівки."
       }
     }
   },
@@ -339,7 +413,18 @@ export const TRANSLATIONS: Record<Language, Translation> = {
     },
     projects: {
       title: "Unsere Projekte",
+      subtitle: "Erfahren Sie, wie wir unsere Gemeinschaft durch konkrete Maßnahmen und nachhaltige Entwicklung verändern.",
+      viewAll: "Alle Projekte ansehen",
       filterAll: "Alle Projekte",
+      description: "Vom Wiederaufbau von Gemeindezentren bis zur Unterstützung von Veteranen – unsere Projekte zielen auf nachhaltige Wirkung ab.",
+      categories: {
+        all: "Alle",
+        infrastructure: "Infrastruktur",
+        culture: "Kultur",
+        civicTech: "Civic-Tech",
+        sports: "Sport",
+        ecology: "Ökologie"
+      },
       status: {
         ongoing: "Laufend",
         completed: "Abgeschlossen",
@@ -406,6 +491,32 @@ export const TRANSLATIONS: Record<Language, Translation> = {
         mission: "Mission",
         team: "Team",
         reports: "Berichte"
+      }
+    },
+    seo: {
+      home: {
+        title: "Neusatz | Gemeinnützige Entwicklungsorganisation",
+        description: "Neusatz stärkt die Gemeinde Berezanka durch Innovation, Bildung, wirtschaftliche Entwicklung und starke lokale Netzwerke. Gestalten Sie mit!"
+      },
+      projects: {
+        title: "Projekte | Neusatz",
+        description: "Gemeindeentwicklungsprojekte: Infrastruktur, Civic-Tech, Aquakultur, Sport und kulturelles Erbe in Progresivka und Berezanka."
+      },
+      news: {
+        title: "Aktuelles | Neusatz",
+        description: "Neueste Updates zu Neusatz-Initiativen, Geschichten aus der Gemeinde und Nachrichten zur Gemeindeentwicklung in Berezanka."
+      },
+      about: {
+        title: "Über Uns | Neusatz",
+        description: "Erfahren Sie mehr über Neusatz NGO - unsere Mission, Team und Werte. Wir schaffen Chancen für die ländliche Gemeinde Berezanka in der Ukraine."
+      },
+      donate: {
+        title: "Mitmachen | Neusatz",
+        description: "Unterstützen Sie Neusatz NGO. Spenden Sie, werden Sie Freiwilliger oder Partner für die Entwicklung der Gemeinde Berezanka durch nachhaltige Projekte."
+      },
+      community: {
+        title: "Gemeinschaft | Neusatz",
+        description: "Bleiben Sie mit Neusatz verbunden! Aktuelle Facebook-Beiträge, Community-Updates und soziales Engagement aus Progresivka."
       }
     }
   }

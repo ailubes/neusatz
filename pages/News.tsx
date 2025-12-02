@@ -3,6 +3,7 @@ import { NavLink, useSearchParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { getPaginatedPosts, searchPosts, truncateText, FacebookPost } from '../services/facebookPostsService';
 import { Search, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const POSTS_PER_PAGE = 8; // 4x2 grid
 const DEFAULT_POST_IMAGE = '/images/posts/default-post.jpg';
@@ -150,6 +151,12 @@ const News: React.FC = () => {
 
   return (
     <div className="py-16 bg-gradient-to-b from-stone-50 to-amber-50 min-h-screen">
+      <SEO
+        title={t.seo.news.title}
+        description={t.seo.news.description}
+        path="/news"
+        lang={language}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

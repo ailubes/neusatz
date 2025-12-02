@@ -1,9 +1,10 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { CreditCard, Wallet, Copy, Check } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Donate: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [copied, setCopied] = React.useState<string | null>(null);
 
   const handleCopy = (text: string, id: string) => {
@@ -14,6 +15,12 @@ const Donate: React.FC = () => {
 
   return (
     <div className="py-16 bg-gradient-to-b from-amber-50 to-stone-50 min-h-screen">
+      <SEO
+        title={t.seo.donate.title}
+        description={t.seo.donate.description}
+        path="/donate"
+        lang={language}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-12">

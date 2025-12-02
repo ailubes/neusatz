@@ -1,9 +1,10 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { MapPin, Calendar, Users, Sun, Mountain, Landmark, BookOpen, Sprout, ExternalLink } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Community: React.FC = () => {
-  const { language } = useLanguage();
+  const { language, t: translations } = useLanguage();
 
   // Content translations
   const content = {
@@ -183,6 +184,12 @@ Die Bewahrung der Dorfgeschichte ist ein wichtiger Teil des nationalen Gedächtn
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-amber-50">
+      <SEO
+        title={translations.seo.community.title}
+        description={translations.seo.community.description}
+        path="/community"
+        lang={language}
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
         <img

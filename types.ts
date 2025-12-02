@@ -45,7 +45,18 @@ export interface Translation {
   };
   projects: {
     title: string;
+    subtitle: string;
+    viewAll: string;
     filterAll: string;
+    description: string;
+    categories: {
+      all: string;
+      infrastructure: string;
+      culture: string;
+      civicTech: string;
+      sports: string;
+      ecology: string;
+    };
     status: {
       ongoing: string;
       completed: string;
@@ -107,6 +118,32 @@ export interface Translation {
     noPostsText: string;
     viewOnFacebook: string;
     postedOn: string;
+  };
+  seo: {
+    home: {
+      title: string;
+      description: string;
+    };
+    projects: {
+      title: string;
+      description: string;
+    };
+    news: {
+      title: string;
+      description: string;
+    };
+    about: {
+      title: string;
+      description: string;
+    };
+    donate: {
+      title: string;
+      description: string;
+    };
+    community: {
+      title: string;
+      description: string;
+    };
   };
 }
 

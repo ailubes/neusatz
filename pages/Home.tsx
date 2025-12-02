@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { ArrowRight, Users, CheckCircle, Target, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { PROJECTS } from '../constants';
+import SEO from '../components/SEO';
 
 const HERO_IMAGES = [
   'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Kosa_Tiligul_Progresivka.jpg/2560px-Kosa_Tiligul_Progresivka.jpg',
@@ -13,7 +14,7 @@ const HERO_IMAGES = [
 const Home: React.FC = () => {
   const { t, language } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   // Auto-advance slider
   useEffect(() => {
     const timer = setInterval(() => {
@@ -24,8 +25,58 @@ const Home: React.FC = () => {
 
   const featuredProjects = PROJECTS.slice(0, 3);
 
+  // Organization + WebSite JSON-LD schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NGO",
+        "@id": "https://neusatz.online/#organization",
+        "name": "Neusatz",
+        "alternateName": "ГО «Нейзац»",
+        "url": "https://neusatz.online",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://neusatz.online/logo.png"
+        },
+        "description": t.about.whoWeAreText,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Progresivka",
+          "addressRegion": "Mykolaiv Oblast",
+          "addressCountry": "UA"
+        },
+        "sameAs": ["https://facebook.com/neusatz.ngo"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "ngoneusatz@gmail.com",
+          "telephone": "+380675024730",
+          "contactType": "customer service",
+          "availableLanguage": ["Ukrainian", "English", "German"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://neusatz.online/#website",
+        "url": "https://neusatz.online",
+        "name": "Neusatz",
+        "publisher": {
+          "@id": "https://neusatz.online/#organization"
+        },
+        "inLanguage": ["uk", "en", "de"]
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col w-full">
+      <SEO
+        title={t.seo.home.title}
+        description={t.seo.home.description}
+        path="/"
+        lang={language}
+        schema={organizationSchema}
+      />
       {/* Modern Hero Section */}
       <section className="relative flex items-center min-h-[90vh] bg-stone-900 overflow-hidden">
 
@@ -160,10 +211,10 @@ const Home: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div className="max-w-2xl">
               <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4">{t.projects.title}</h2>
-              <p className="text-stone-600 text-lg">Discover how we are transforming our community through tangible actions and sustainable development.</p>
+              <p className="text-stone-600 text-lg">{t.projects.subtitle}</p>
             </div>
-            <Link to="/projects" className="inline-flex items-center text-primary-700 font-bold hover:text-primary-800 transition-colors group">
-              View All Projects <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <Link to={`/${language}/projects`} className="inline-flex items-center text-primary-700 font-bold hover:text-primary-800 transition-colors group">
+              {t.projects.viewAll} <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 

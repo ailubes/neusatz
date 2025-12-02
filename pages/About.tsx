@@ -2,12 +2,19 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { TEAM, REPORTS } from '../constants';
 import { FileText, Download, Award, Zap } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   const { t, language } = useLanguage();
 
   return (
     <div className="bg-white">
+      <SEO
+        title={t.seo.about.title}
+        description={t.seo.about.description}
+        path="/about"
+        lang={language}
+      />
       {/* Mission Section */}
       <section className="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
